@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zona Gamer - Tienda de Apps</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+
+<header>
+    <div class="logo">
+        <i class="fa-solid fa-gamepad logo-icon"></i>
+        <h2>Zona Gamer</h2>
+    </div>
+
+    <div class="busqueda">
+        <i class="fa fa-search"></i>
+        <input type="text" placeholder="Buscar aplicaciones y juegos...">
+    </div>
+
+    <button id="modo" title="Cambiar tema">🌙</button>
+</header>
+
+<main class="main-container">
+    <section class="category-pills">
+        <span class="pill active">Para ti</span>
+        <span class="pill">Listas de éxitos</span>
+        <span class="pill">Categorías</span>
+        <span class="pill">Herramientas APK</span>
+    </section>
+
+    <section class="slider">
+        <div class="slides">
+            <div class="slide-card hero-1">
+                <div class="slide-content">
+                    <span class="badge">Destacado</span>
+                    <h2>Limpiador de Dispositivo Android</h2>
+                    <p>Optimiza la memoria y mejora el rendimiento de tu teléfono al instante.</p>
+                </div>
+            </div>
+            <div class="slide-card hero-2">
+                <div class="slide-content">
+                    <span class="badge">Recomendado</span>
+                    <h2>Código Fuente Pro</h2>
+                    <p>Aplicaciones 100% funcionales listas para compilar y personalizar.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-title">
+        <h3>Aplicaciones destacadas</h3>
+    </section>
+
+    <section class="apps">
+        <!-- APP 1: LIMPIADOR DE DISPOSITIVO ANDROID -->
+        <div class="card">
+            <div class="card-image-wrapper">
+                <img src="./limpiador/1.jpg" alt="Limpiador de dispositivo Android">
+            </div>
+            <div class="card-details">
+                <h2>Limpiador de dispositivo Android</h2>
+                <span class="developer">Herramientas y Optimización</span>
+                <p>Libera espacio y acelera tu sistema. Se descargará en un archivo .zip y requiere compilación. La app funciona correctamente.</p>
+                <div class="card-footer">
+                    <span class="precio">Gs. 100.000</span>
+                    <button class="comprar" data-app="limpiador">Comprar</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-image-wrapper">
+                <img src="https://picsum.photos/300/200?random=2" alt="Editor Premium">
+            </div>
+            <div class="card-details">
+                <h2>Editor Premium</h2>
+                <span class="developer">Reproductores y editores</span>
+                <p>Edita videos profesionales en segundos desde tu móvil.</p>
+                <div class="card-footer">
+                    <span class="precio">Gs. 70.000</span>
+                    <button class="comprar">Comprar</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-image-wrapper">
+                <img src="https://picsum.photos/300/200?random=3" alt="Gestor APK">
+            </div>
+            <div class="card-details">
+                <h2>Gestor APK</h2>
+                <span class="developer">Herramientas</span>
+                <p>Administra, instala y organiza tus archivos e instalaciones.</p>
+                <div class="card-footer">
+                    <span class="precio">Gs. 45.000</span>
+                    <button class="comprar">Comprar</button>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<script src="app.js"></script>
+
+</body>
+</html>

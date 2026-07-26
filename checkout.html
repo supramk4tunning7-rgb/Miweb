@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Limpiador de dispositivo Android - Comprar</title>
+
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+.checkout {
+    max-width: 1000px;
+    margin: 40px auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    padding: 20px;
+}
+
+.producto, .pagos {
+    background: var(--card-bg, #ffffff);
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px rgba(0,0,0,.08);
+}
+
+.main-photo img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.thumbnails {
+    display: flex;
+    gap: 10px;
+    margin-top: 12px;
+}
+
+.thumbnails img {
+    width: 65px;
+    height: 65px;
+    object-fit: cover;
+    border-radius: 10px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: 0.2s;
+}
+
+.thumbnails img:hover, .thumbnails img.active {
+    border-color: #01875f;
+    transform: scale(1.05);
+}
+
+.producto h2 {
+    margin-top: 15px;
+    font-size: 22px;
+}
+
+.desc {
+    margin-top: 10px;
+    color: var(--text-secondary, #5f6368);
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.notice-box {
+    background: #e6f4ea;
+    border-left: 4px solid #01875f;
+    padding: 10px 14px;
+    margin-top: 12px;
+    border-radius: 6px;
+    font-size: 13px;
+    color: #004d40;
+}
+
+.precio {
+    font-size: 28px;
+    color: #01875f;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+.metodo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    border: 2px solid #ddd;
+    border-radius: 15px;
+    margin-top: 15px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.metodo:hover {
+    border-color: #01875f;
+    transform: scale(1.02);
+}
+
+#comprarAhora {
+    width: 100%;
+    margin-top: 25px;
+    padding: 16px;
+    border: none;
+    border-radius: 50px;
+    background: #01875f;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+@media(max-width: 900px){
+    .checkout {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+    <div class="logo">
+        <i class="fa-solid fa-gamepad logo-icon"></i>
+        <h2>Zona Gamer</h2>
+    </div>
+</header>
+
+<section class="checkout">
+
+    <div class="producto">
+        <div class="main-photo">
+            <img id="fotoPrincipal" src="./limpiador/1.jpg" alt="Limpiador Android">
+        </div>
+        
+        <!-- Galería de 4 imágenes -->
+        <div class="thumbnails">
+            <img src="./limpiador/1.jpg" class="active" onclick="cambiarImagen('./limpiador/1.jpg', this)">
+            <img src="./limpiador/2.jpg" onclick="cambiarImagen('./limpiador/2.jpg', this)">
+            <img src="./limpiador/3.jpg" onclick="cambiarImagen('./limpiador/3.jpg', this)">
+            <img src="./limpiador/4.jpg" onclick="cambiarImagen('./limpiador/4.jpg', this)">
+        </div>
+
+        <h2>Limpiador de dispositivo Android</h2>
+        
+        <p class="desc">
+            Optimiza y elimina el almacenamiento innecesario de tu dispositivo en segundos.
+        </p>
+
+        <div class="notice-box">
+            📦 <strong>Información importante:</strong> Se descargará en un archivo <strong>.zip</strong> y se necesita compilar. La aplicación funciona correctamente.
+        </div>
+
+        <div class="precio">
+            Gs. 100.000
+        </div>
+    </div>
+
+    <div class="pagos">
+        <h2>Selecciona un método de pago</h2>
+
+        <div class="metodo">
+            <span>PayPal</span>
+            <i class="fa-brands fa-paypal fa-2x" style="color: #003087;"></i>
+        </div>
+
+        <div class="metodo">
+            <span>Transferencia / Mercado Pago</span>
+            <i class="fa-solid fa-wallet fa-2x" style="color: #009ee3;"></i>
+        </div>
+
+        <button id="comprarAhora">
+            Comprar ahora
+        </button>
+    </div>
+
+</section>
+
+<script>
+function cambiarImagen(ruta, el) {
+    document.getElementById("fotoPrincipal").src = ruta;
+    document.querySelectorAll(".thumbnails img").forEach(img => img.classList.remove("active"));
+    el.classList.add("active");
+}
+
+let metodo = "";
+document.querySelectorAll(".metodo").forEach(item => {
+    item.onclick = () => {
+        document.querySelectorAll(".metodo").forEach(i => i.style.border = "2px solid #ddd");
+        item.style.border = "3px solid #01875f";
+        metodo = item.innerText;
+    }
+});
+
+document.getElementById("comprarAhora").onclick = () => {
+    if (metodo == "") {
+        alert("Selecciona un método de pago.");
+        return;
+    }
+    alert("Has seleccionado: " + metodo + ". Procede con el pago para recibir el enlace del archivo en .zip.");
+}
+</script>
+
+</body>
+</html>
